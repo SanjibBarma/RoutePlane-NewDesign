@@ -8,22 +8,22 @@ import java.io.Serializable;
 public class Cluster implements Serializable {
     @SerializedName("route_id")
     @Expose
-    private int routeId;
+    private Integer routeId;
     @SerializedName("route_name")
     @Expose
     private String routeName;
     @SerializedName("cluster_id")
     @Expose
-    private String clusterId;
+    private Integer clusterId;
     @SerializedName("cluster_name")
     @Expose
     private String clusterName;
 
-    public int getRouteId() {
+    public Integer getRouteId() {
         return routeId;
     }
 
-    public void setRouteId(int routeId) {
+    public void setRouteId(Integer routeId) {
         this.routeId = routeId;
     }
 
@@ -35,11 +35,11 @@ public class Cluster implements Serializable {
         this.routeName = routeName;
     }
 
-    public String getClusterId() {
+    public Integer getClusterId() {
         return clusterId;
     }
 
-    public void setClusterId(String clusterId) {
+    public void setClusterId(Integer clusterId) {
         this.clusterId = clusterId;
     }
 
