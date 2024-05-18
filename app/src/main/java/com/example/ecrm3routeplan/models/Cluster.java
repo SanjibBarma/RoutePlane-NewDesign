@@ -8,46 +8,46 @@ import java.io.Serializable;
 public class Cluster implements Serializable {
     @SerializedName("route_id")
     @Expose
-    private Object routeId;
+    private Integer routeId;
     @SerializedName("route_name")
     @Expose
-    private Object routeName;
+    private String routeName;
     @SerializedName("cluster_id")
     @Expose
-    private Object clusterId;
+    private Integer clusterId;
     @SerializedName("cluster_name")
     @Expose
-    private Object clusterName;
+    private String clusterName;
 
-    public Object getRouteId() {
+    public Integer getRouteId() {
         return routeId;
     }
 
-    public void setRouteId(Object routeId) {
+    public void setRouteId(Integer routeId) {
         this.routeId = routeId;
     }
 
-    public Object getRouteName() {
+    public String getRouteName() {
         return routeName;
     }
 
-    public void setRouteName(Object routeName) {
+    public void setRouteName(String routeName) {
         this.routeName = routeName;
     }
 
-    public Object getClusterId() {
+    public Integer getClusterId() {
         return clusterId;
     }
 
-    public void setClusterId(Object clusterId) {
+    public void setClusterId(Integer clusterId) {
         this.clusterId = clusterId;
     }
 
-    public Object getClusterName() {
+    public String getClusterName() {
         return clusterName;
     }
 
-    public void setClusterName(Object clusterName) {
+    public void setClusterName(String clusterName) {
         this.clusterName = clusterName;
     }
 }
