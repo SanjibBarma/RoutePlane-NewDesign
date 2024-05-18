@@ -13,7 +13,6 @@
         android:background="@android:color/holo_blue_light"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toStartOf="@+id/rvClusterDatas"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,39 +25,66 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@android:color/darker_gray" />
+            android:background="@android:color/white" />
 
         <TextView
             android:id="@+id/user_info"
-            android:layout_width="wrap_content"
+            android:layout_width="185dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:text="rashed (brrashed@ecrm-imsl)"
+            android:text="Name"
             android:layout_marginLeft="8dp" />
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRouteBrName"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:maxWidth="250dp"
         android:minWidth="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:itemCount="5"
         tools:listitem="@layout/route_plane_br_name_child" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvClusterDatas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <View-->
+<!--        android:id="@+id/view2"-->
+<!--        android:layout_width="1dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:visibility="gone"-->
+<!--        android:background="@android:color/white"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/tvActionTitle"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
+<!--    <TextView-->
+<!--        android:id="@+id/tvActionTitle"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:text="Action"-->
+<!--        android:visibility="gone"-->
+<!--        android:gravity="center"-->
+<!--        android:background="@android:color/holo_blue_light"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rvActionPoint"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/rvClusterDatas"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tvActionTitle"-->
+<!--        tools:itemCount="5"-->
+<!--        android:visibility="gone"-->
+<!--        tools:listitem="@layout/layout_action" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
