@@ -18,26 +18,32 @@ import java.util.List;
 public class BrNameAdapter extends RecyclerView.Adapter<BrNameAdapter.ViewHolder> {
     Context context;
     List<RoutePlaneData> routePlaneData;
-    List<RoutePlaneData> routePlaneDatas;
+
     public BrNameAdapter(Context context, List<RoutePlaneData> routePlaneData) {
         this.context = context;
         this.routePlaneData = routePlaneData;
-        this.routePlaneDatas = routePlaneData;
     }
 
     @NonNull
     @Override
     public BrNameAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= (View) LayoutInflater.from(context).inflate(R.layout.route_plane_br_name_child,parent,false);
-
+        View view = LayoutInflater.from(context).inflate(R.layout.route_plane_br_name_child, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BrNameAdapter.ViewHolder holder, int position) {
+        RoutePlaneData data = routePlaneData.get(position);
+        holder.tvBrName.setText(data.getName());
+        holder.cbNameChildItem.setChecked(data.getIsAssigned() && data.isChecked());
 
+        holder.cbNameChildItem.setEnabled(data.getIsAssigned());
 
-        holder.tvBrName.setText(routePlaneData.get(position).getName());
+        holder.cbNameChildItem.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (data.getIsAssigned()) {
+                data.setChecked(isChecked);
+            }
+        });
     }
 
     @Override
@@ -45,12 +51,23 @@ public class BrNameAdapter extends RecyclerView.Adapter<BrNameAdapter.ViewHolder
         return routePlaneData.size();
     }
 
+    public void selectAllAssigned(boolean isChecked) {
+        for (RoutePlaneData data : routePlaneData) {
+            if (data.getIsAssigned()) {
+                data.setChecked(isChecked);
+            }
+        }
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvBrName;
         CheckBox cbNameChildItem;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvBrName = itemView.findViewById(R.id.tvBrName);
+            cbNameChildItem = itemView.findViewById(R.id.cbNameChildItem);
         }
     }
 }

@@ -19,6 +19,7 @@ public class RoutePlaneData implements Serializable {
     @SerializedName("isAssigned")
     @Expose
     private Boolean isAssigned;
+    private boolean isChecked; // Add this field
 
     public Integer getUserId() {
         return userId;
@@ -52,4 +53,11 @@ public class RoutePlaneData implements Serializable {
         this.isAssigned = isAssigned;
     }
 
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
 }
